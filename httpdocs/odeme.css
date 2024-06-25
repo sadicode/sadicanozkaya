@@ -1,0 +1,107 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f0f0f0;
+}
+
+.container {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.general-info {
+    margin-bottom: 30px;
+}
+
+.general-info p {
+    font-size: 16px;
+}
+
+.bank-section, .crypto-section, .paypal-section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #4caf50;
+}
+
+.info-box {
+    margin-bottom: 15px;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #3e3e3e;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bank-details {
+    display: flex;
+    align-items: center;
+}
+
+.bank-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3e3e3e;
+    color: #f0f0f0;
+    cursor: pointer;
+    outline: none;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0.9;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}

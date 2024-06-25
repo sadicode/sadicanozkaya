@@ -1,0 +1,91 @@
+<!-- HTML & js ile şifre oluşturucu  -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<form id="password-form">
+  <label for="length">Şifre Uzunluğu:</label>
+  <input type="number" min="8" max="128" id="length" value="12">
+  <button type="submit">Şifre Oluştur</button>
+  <br>
+  <label for="password">Şifreniz:</label>
+  <input type="text" readonly id="password">
+</form>
+ 
+<style>
+ 
+#password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* Stil kodlarınız */
+*
+{
+  font-family: quicksand;
+  font-weight: 500;
+}
+#password-form input[type="text"]
+{
+  width: 250px;
+    font-size: 16px;
+  padding: 10px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+ 
+#password-form input[type="number"],
+#password-form button {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  margin: 10px 0;
+ 
+ 
+}
+ 
+#password-form input[type="number"] {
+  width: 90px;
+  background-color: #ededed;
+}
+ 
+#password-form button {
+  background-color: #22a7f0;
+  color: white;
+  cursor: pointer;
+}
+ 
+#password-form button:hover {
+  background-color: #3498db;
+}
+ 
+</style>
+ 
+<script>
+  // Şifre oluşturma işlemleri
+  const form = document.querySelector('#password-form');
+  const passwordInput = document.querySelector('#password');
+ 
+  // Karakterleri dahil et
+  const generatePassword = (length) => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=';
+    let password = '';
+    for (let i = 0; i < length; i++) {
+      password += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return password;
+  }
+ 
+  // Tamamla
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const length = document.querySelector('#length').value;
+    passwordInput.value = generatePassword(length);
+  });
+ 
+  // Kapat
+</script>
+ 
+<!-- shentaweb -->

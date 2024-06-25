@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme Bilgileri</title>
+    <link rel="stylesheet" href="odeme.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ödeme Bilgileri</h1>
+        <div class="general-info">
+            <p>Lütfen aşağıdaki hesap bilgilerini kullanarak ödemelerinizi gerçekleştirin. Ödeme yaptıktan sonra dekontunuzu paylaşmayı unutmayın.</p>
+        </div>
+        
+        <div class="bank-section">
+            <h2>Bankalar</h2>
+            <div class="info-box" onclick="copyToClipboard('iban1')">
+                <label for="iban1">IBAN 1:</label>
+				<label for="iban1">İsim soy isim::</label>
+                <input type="text" id="iban1" value="TR123456789012345678901234" readonly>
+                <div class="tooltip" id="tooltip-iban1">Kopyalandı!</div>
+            </div>
+            <div class="info-box" onclick="copyToClipboard('iban2')">
+                <label for="iban2">IBAN 2:</label>
+                <input type="text" id="iban2" value="TR223456789012345678901234" readonly>
+                <div class="tooltip" id="tooltip-iban2">Kopyalandı!</div>
+            </div>
+            <div class="info-box" onclick="copyToClipboard('iban3')">
+                <label for="iban3">IBAN 3:</label>
+                <input type="text" id="iban3" value="TR323456789012345678901234" readonly>
+                <div class="tooltip" id="tooltip-iban3">Kopyalandı!</div>
+            </div>
+            <div class="info-box" onclick="copyToClipboard('iban4')">
+                <label for="iban4">IBAN 4:</label>
+                <input type="text" id="iban4" value="TR423456789012345678901234" readonly>
+                <div class="tooltip" id="tooltip-iban4">Kopyalandı!</div>
+            </div>
+            <div class="info-box" onclick="copyToClipboard('iban5')">
+                <label for="iban5">IBAN 5:</label>
+                <input type="text" id="iban5" value="TR523456789012345678901234" readonly>
+                <div class="tooltip" id="tooltip-iban5">Kopyalandı!</div>
+            </div>
+        </div>
+
+        <div class="crypto-section">
+            <h2>Kripto Para</h2>
+            <div class="info-box" onclick="copyToClipboard('crypto')">
+                <label for="crypto">Kripto Cüzdan Adresi:</label>
+                <input type="text" id="crypto" value="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa" readonly>
+                <div class="tooltip" id="tooltip-crypto">Kopyalandı!</div>
+            </div>
+        </div>
+
+        <div class="paypal-section">
+            <h2>PayPal</h2>
+            <div class="info-box" onclick="copyToClipboard('paypal')">
+                <label for="paypal">PayPal E-posta:</label>
+                <input type="text" id="paypal" value="example@paypal.com" readonly>
+                <div class="tooltip" id="tooltip-paypal">Kopyalandı!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* Mobil cihazlar için */
+            document.execCommand("copy");
+
+            var tooltip = document.getElementById('tooltip-' + elementId);
+            tooltip.style.visibility = 'visible';
+            setTimeout(function() {
+                tooltip.style.visibility = 'hidden';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

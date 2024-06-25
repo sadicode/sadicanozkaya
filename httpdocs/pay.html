@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yönlendirme Sayfası</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .countdown {
+            font-size: 2em;
+            color: #ff6347;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript">
+        function isMobile() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        function redirect() {
+            var url = "https://pay.sadicanozkaya.com.tr";
+            if (isMobile()) {
+                // Mobil cihazlar için farklı bir URL'ye yönlendirme yapılabilir
+                // url = "https://mobil-yeni-sayfa.com";
+            }
+            window.location.href = url;
+        }
+
+        function startCountdown(seconds) {
+            var countdownElement = document.getElementById('countdown');
+            var interval = setInterval(function() {
+                seconds--;
+                countdownElement.textContent = seconds;
+                if (seconds <= 0) {
+                    clearInterval(interval);
+                    redirect();
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            startCountdown(3); // 5 saniye geri sayım
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p>3 saniye içinde yeni sayfaya yönlendirileceksiniz.</p>
+        <p class="countdown" id="countdown">3</p>
+        <p>Eğer yönlendirilmezseniz, <a href="https://pay.sadicanozkaya.com.tr">buraya tıklayın</a>.</p>
+    </div>
+</body>
+</html>
